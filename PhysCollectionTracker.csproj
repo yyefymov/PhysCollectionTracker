@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CollectibleAdderLibrary\**" />
+    <Compile Remove="DataModelLibrary\**" />
+    <Compile Remove="EFDataHandlerLibrary\**" />
+    <Content Remove="CollectibleAdderLibrary\**" />
+    <Content Remove="DataModelLibrary\**" />
+    <Content Remove="EFDataHandlerLibrary\**" />
+    <EmbeddedResource Remove="CollectibleAdderLibrary\**" />
+    <EmbeddedResource Remove="DataModelLibrary\**" />
+    <EmbeddedResource Remove="EFDataHandlerLibrary\**" />
+    <None Remove="CollectibleAdderLibrary\**" />
+    <None Remove="DataModelLibrary\**" />
+    <None Remove="EFDataHandlerLibrary\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="CollectibleAdderLibrary\CollectibleAdderLibrary.csproj" />
+    <ProjectReference Include="DataModelLibrary\DataModelLibrary.csproj" />
+    <ProjectReference Include="EFDataHandlerLibrary\EFDataHandlerLibrary.csproj" />
+  </ItemGroup>
+
+</Project>
