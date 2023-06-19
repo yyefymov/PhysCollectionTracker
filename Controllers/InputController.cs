@@ -14,12 +14,6 @@ namespace PhysCollectionTracker.Controllers
             _collectibleAdder = collectibleAdder;
         }
 
-        [HttpGet]
-        public IActionResult Get() 
-        {
-            return NoContent();
-        }
-
         [HttpPost]
         public IActionResult AddCollectible([FromBody] string barcode)
         {

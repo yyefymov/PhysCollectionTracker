@@ -17,8 +17,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSqlite<CollectionContext>("Data Source=MediaCollection.db");
 
 builder.Services.AddScoped(typeof(ICollectionRepository<>), typeof(EFCollectionRepository<>));
-//builder.Services.AddScoped<EFCollectionRepository<CD>>();
-//builder.Services.AddScoped<EFCollectionRepository<Vinyl>>();
+builder.Services.AddScoped<EFCollectionRepository<CD>>();
+builder.Services.AddScoped<EFCollectionRepository<Vinyl>>();
+
+builder.Services.AddTransient<ICollectionRepositoryFactory, EFCollectionRepositoryFactory>();
 
 builder.Services.AddTransient<ICollectibleAdder, CollectibleAdder>();
 

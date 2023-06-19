@@ -9,7 +9,8 @@ namespace EFDataHandlerLibrary.Repositories
 {
     public class EFCollectionRepository<T> : ICollectionRepository<T> where T : class // indicates that T must be a reference type (class, interface, delegate or array)
     {
-        CollectionContext _dbContext;
+        private readonly CollectionContext _dbContext;
+
         public EFCollectionRepository(CollectionContext dbContext)
         {
             _dbContext = dbContext;
